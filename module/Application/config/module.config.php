@@ -19,8 +19,8 @@ return [
                 'options' => [
                     'route'    => '/',
                     'defaults' => [
-                        'controller' => Controller\IndexController::class,
-                        'action'     => 'index',
+                        'controller' => Controller\PruebaController::class,
+                        'action'     => 'dashboard',
                     ],
                 ],
             ],
@@ -29,8 +29,8 @@ return [
                 'options' => [
                     'route'    => '/application[/:action]',
                     'defaults' => [
-                        'controller'    => Controller\IndexController::class,
-                        'action'        => 'index',
+                        'controller'    => Controller\PruebaController::class,
+                        'action'        => 'dashboard',
                     ],
                 ],
             ],
@@ -38,7 +38,7 @@ return [
     ],
     'controllers' => [
         'factories' => [
-            Controller\IndexController::class => InvokableFactory::class,
+            Controller\PruebaController::class => InvokableFactory::class,
         ],
     ],
     'view_manager' => [
