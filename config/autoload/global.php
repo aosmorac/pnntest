@@ -2,7 +2,7 @@
 /**
  * Global Configuration Override
  *
- * You can use this file for overriding configuration values from modules, etc.
+ * You can use this file for overridding configuration values from modules, etc.
  * You would place values in here that are agnostic to the environment and not
  * sensitive to security.
  *
@@ -11,6 +11,19 @@
  * file.
  */
 
-return [
-    // ...
-];
+return array(
+    'db' => array(
+        'driver' => 'Pdo',
+        'dsn'            => 'mysql:dbname=prueba_umaic;host=master.ce9rafewpcp6.us-west-2.rds.amazonaws.com',
+        'username'       => 'test',
+        'password'       => '841210labs',
+        'driver_options' => array(
+            PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
+        ),
+    ),
+    'service_manager' => array(
+        'factories' => array(
+            'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterServiceFactory',
+        ),
+    ),
+);
