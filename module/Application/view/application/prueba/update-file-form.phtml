@@ -1,4 +1,15 @@
-<form action="/application/get-data-file" method="post" enctype="multipart/form-data">
+<h3>Cargue un Archivo csv separado por comas con nueva información</h3>
+<form action="/application/prueba/get-data-file" method="post" enctype="multipart/form-data">
     <input type="file" name="mcFile">
     <input type="submit" value="Cargar">
 </form>
+
+<br><br>
+
+<h3>Exporte la información almacenada</h3>
+<a href="/application/prueba/export-all">Click Aquí para exportar</a>
+
+<script>
+    jQuery('#dashboardLink').removeClass('active');
+    jQuery('#dataLink').addClass('active');
+</script>

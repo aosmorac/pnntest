@@ -21,6 +21,8 @@
         <?= $this->headScript()
             ->prependFile($this->basePath('js/bootstrap.min.js'))
             ->prependFile($this->basePath('js/jquery-2.2.4.min.js'))
+            ->prependFile('https://www.gstatic.com/charts/loader.js')
+            ->prependFile('https://www.google.com/jsapi')
         ?>
     </head>
     <body>
@@ -35,8 +37,8 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="<?= $this->url('home') ?>">DashBoard</a></li>
-                        <li><a href="/application/data">Data</a></li>
+                        <li id="dashboardLink" class="active"><a href="<?= $this->url('home') ?>">DashBoard</a></li>
+                        <li id="dataLink"><a href="/application/prueba/update-file-form">Data</a></li>
                     </ul>
                 </div>
             </div>
