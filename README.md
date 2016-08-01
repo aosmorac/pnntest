@@ -11,6 +11,7 @@ Descargar Aplicación
 El repositorio es totalmente publico, pueden ingresar a https://github.com/aosmorac/umaic-test
 
 Para tener la aplicación en su quipo debera clonar el repositorio de la siguiente manera:
+
     git clone https://github.com/aosmorac/umaic-test.git
 
 
