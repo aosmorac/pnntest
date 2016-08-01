@@ -6,6 +6,14 @@ Aplicación Web responsive para nutrifami.
 Una vez descargados los archivos se debe configurar el servidor virtual.
 
 
+Descargar Aplicación
+--------------------
+El repositorio es totalmente publico, pueden ingresar a https://github.com/aosmorac/umaic-test
+
+Para tener la aplicación en su quipo debera clonar el repositorio de la siguiente manera:
+    git clone https://github.com/aosmorac/umaic-test.git
+
+
 VirtualHost
 --------------
  A continuación un ejemplo de la configuración del host virtual, en windows.
@@ -13,9 +21,9 @@ VirtualHost
     Listen 85
     NameVirtualHost *:85
     <VirtualHost *:85>
-    Alias /UmaicTest "C:\umaic\public"
-    DocumentRoot "C:\umaic\public"
-      <Directory "C:\umaic\public">
+    Alias /UmaicTest "C:\umaic-test\public"
+    DocumentRoot "C:\umaic-test\public"
+      <Directory "C:\umaic-test\public">
        AllowOverride All
        Allow from all
       </Directory>
