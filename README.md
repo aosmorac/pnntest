@@ -26,8 +26,7 @@ Caracterizticas tecnicas
 ------------------------
 
  1. Zend Framework
- 2. bootstrap
- 3. jquery, angularjs
+ 2. jquery
 
 
 Distribución de Archivos
