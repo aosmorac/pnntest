@@ -2,6 +2,7 @@ Prueba UMAIC
 =======================
 
 Aplicación Web responsive para nutrifami.
+Para probar la aplicación puede entrar a http://umaic-test.841210lab.com/
 
 Una vez descargados los archivos se debe configurar el servidor virtual.
 
