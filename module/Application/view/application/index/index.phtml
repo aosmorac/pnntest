@@ -8,10 +8,10 @@
     	<div class="col-md-6 campo"><textarea id="campo-texto"></textarea></div>    
     	
     	<div class="col-md-6 label">Departamento:</div>
-    	<div class="col-md-6 campo"><select><option>A</option></select></div>   
+    	<div class="col-md-6 campo"><select id="campo-departamento"></select></div>   
     	 
     	<div class="col-md-6 label">Municipio:</div>
-    	<div class="col-md-6 campo"><select><option>A</option></select></div>    
+    	<div class="col-md-6 campo"><select id="campo-municipio"></select></div>    
     	
     	<div class="col-md-6 label">Google Captcha:</div>
     	<div class="col-md-6 campo"><input></div>    
@@ -21,17 +21,59 @@
     
 </div>
 <script>
+
+	var dp = {
+		/* Lista de departamentos */
+		lista: ['A','B','C','D'], 
+		/* Lista de municipios por departamento */
+		departamentos: {
+			A: {
+				municipios: [1,2]
+			},
+			B: {
+				municipios: [3]
+			},
+			C: {
+				municipios: [4]
+			},
+			D: {
+				municipios: [5,6]
+			}
+		}	
+	};
+	
+
 	$( function() {
-		$( "#campo-fecha" ).datepicker({maxDate: new Date(2017, 11, 31) }); /* Fecha maximo 31 de diciembre de 2017 */
-		
+
+		/* Fecha maximo 31 de diciembre de 2017 */
+		$( "#campo-fecha" ).datepicker({maxDate: new Date(2017, 11, 31) }); 
+
+		/* Texto maximo 50 caracteres */
 		$('#campo-texto').keyup(function() {
 		    var len = $(this).val().length;
 		    if (len > 50) {
-		    	$(this).val($(this).val().substring(0,50));  /* Texto maximo 50 caracteres */
+		    	$(this).val($(this).val().substring(0,50));  
 		        return false;
 		    }
 		});
-		
+
+		/* Carga lista de departamentos */
+		lista-departamentos = '';
+		$.each( dp.lista, function( key, value ) {
+			lista-departamentos .= '<option value="'.value.'">'.value.'</option>';
+		});
+		$( '#campo-departamento' ).html(lista-departamentos);
+
+		/* Carga lista de municipios */
+
+		$( '#campo-departamento' ).change( function(){
+			departamento = $( '#campo-departamento' ).val();
+			lista-municipios = '';
+			$.each( dp.departamentos[departamento].municipios, function( key, value ) {
+				lista-municipios .= '<option value="'.value.'">'.value.'</option>';
+			});
+			$( '#campo-municipio' ).html(lista-municipios);
+		} );
 		
   	} );
     /*
