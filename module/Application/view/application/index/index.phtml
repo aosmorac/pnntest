@@ -1,71 +1,29 @@
 <div class="col-md-12">
     
-    <div class="presupuesto" id="presupuestoXorganizacion" style="width: 900px; height: 500px;">
-    </div>
-    
-    <div class="presupuesto" id="presupuestoXtema" style="width: 900px; height: 500px;">
-    </div>
-    
-    <div><h3>Organizaciones en departamentos</h3></div>
-    <div class="presupuesto" id="departamentosXorg" style="width: 900px; height: 500px;">
-    </div>
+    <form action="pnntest">
+    	<div class="col-md-6 label">Fecha:</div>
+    	<div class="col-md-6 campo"><input type="date"></div>    
+    	
+    	<div class="col-md-6 label">Texto:</div>
+    	<div class="col-md-6 campo"><textarea></textarea></div>    
+    	
+    	<div class="col-md-6 label">Departamento:</div>
+    	<div class="col-md-6 campo"><select><option>A</option></select></div>   
+    	 
+    	<div class="col-md-6 label">Municipio:</div>
+    	<div class="col-md-6 campo"><select><option>A</option></select></div>    
+    	
+    	<div class="col-md-6 label">Google Captcha:</div>
+    	<div class="col-md-6 campo"><input></div>    
+    	
+    	<div><input type="submit" value="Enviar" class="Enviar"></div>
+    </form>
     
 </div>
 <script>
-    
+    /*
     jQuery('#dashboardLink').addClass('active');
     jQuery('#dataLink').removeClass('active');
-    
-    var presupuestoXorganizacion = <?php echo $this->presupuestoXorganizacion; ?>;
-    var presupuestoXtema = JSON.parse('<?php echo $this->presupuestoXtema; ?>');
-    var departamentosXorg = JSON.parse('<?php echo $this->departamentosXorg; ?>');
-    
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(draw);
-      
-      function draw() {
-          drawPresupuesto();
-          drawTemas();
-          drawDepartamentos();
-      }
-      
-      function drawPresupuesto() {
-
-        var data = google.visualization.arrayToDataTable(presupuestoXorganizacion);
-
-        var options = {
-          title: 'Presupuesto por organizacion'
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('presupuestoXorganizacion'));
-
-        chart.draw(data, options);
-      }
-      
-      function drawTemas() {
-
-        var data = google.visualization.arrayToDataTable(presupuestoXtema);
-
-        var options = {
-          title: 'Presupuesto por tema'
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('presupuestoXtema'));
-
-        chart.draw(data, options);
-      }
-      
-      function drawDepartamentos() {
-      var data = google.visualization.arrayToDataTable(departamentosXorg);
-
-      var options = {
-        region: 'CO',
-        displayMode: 'markers',
-        colorAxis: {colors: ['green', 'blue']}
-      };
-
-      var chart = new google.visualization.GeoChart(document.getElementById('departamentosXorg'));
-      chart.draw(data, options);
-    };
-      
+    */
+         
 </script>
