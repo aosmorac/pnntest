@@ -2,7 +2,7 @@
     
     <form action="pnntest">
     	<div class="col-md-6 label">Fecha:</div>
-    	<div class="col-md-6 campo"><input type="date"></div>    
+    	<div class="col-md-6 campo"><input type="date" id="campo-fecha"></div>    
     	
     	<div class="col-md-6 label">Texto:</div>
     	<div class="col-md-6 campo"><textarea></textarea></div>    
@@ -21,6 +21,9 @@
     
 </div>
 <script>
+	jQuery( function() {
+		jQuery( "#campo-fecha" ).datepicker();
+  	} );
     /*
     jQuery('#dashboardLink').addClass('active');
     jQuery('#dataLink').removeClass('active');

@@ -15,12 +15,14 @@
                         ->prependStylesheet($this->basePath('css/style.css'))
                         ->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
                         ->prependStylesheet($this->basePath('css/bootstrap.min.css'))
+                        ->prependStylesheet($this->basePath('https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css'))
         ?>
 
         <!-- Scripts -->
         <?= $this->headScript()
             ->prependFile($this->basePath('js/bootstrap.min.js'))
             ->prependFile($this->basePath('js/jquery-2.2.4.min.js'))
+            ->prependFile($this->basePath('https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'))
         ?>
     </head>
     <body>
@@ -28,7 +30,7 @@
             <?= $this->content; ?>
             <hr>
             <footer>
-                <p>&copy; 2016 by Abel Oswaldo Moreno Acevedo.</p>
+                <p>&copy; 2017 by Abel Oswaldo Moreno Acevedo.</p>
             </footer>
         </div>
         <?= $this->inlineScript() ?>
