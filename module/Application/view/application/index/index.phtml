@@ -15,17 +15,20 @@
     	
     	<div class="g-recaptcha" data-sitekey="6LfcLhkUAAAAAJ0FPiDmvWrvPeiQXsif2918nGMB"></div> 
     	
-    	<div><input type="submit" value="Enviar" class="Enviar"></div>
+    	<div><input type="button" id="formulario-enviar" value="Enviar" class="Enviar"></div>
     </form>
     
 </div>
 <script>
 
-	var dp = {
+
+	var base_url = 'http://pnntest.841210lab.com/';
+	
+	var pnn = {
 		/* Lista de departamentos */
-		lista: ['A','B','C','D'], 
+		departamentos: ['A','B','C','D'], 
 		/* Lista de municipios por departamento */
-		departamentos: {
+		departamento: {
 			A: {
 				municipios: [1,2]
 			},
@@ -38,6 +41,20 @@
 			D: {
 				municipios: [5,6]
 			}
+		},
+
+		enviarFormulario: function(data, callback){
+			callback = callback || function() {};
+	        var serv = base_url + "application/prueba/update-form";
+	        $.ajax({
+	            url: serv,
+	            type: 'GET',
+	            async: true,
+	            data: data,
+	            success: function(data) {
+					alert( data );
+	            }
+	        });
 		}	
 	};
 	
@@ -58,26 +75,32 @@
 
 		/* Carga lista de departamentos */
 		ldepartamentos = '<option value=0>Seleccione...</option>';
-		$.each( dp.lista, function( key, value ) {
+		$.each( pnn.departamentos, function( key, value ) {
 			ldepartamentos += '<option value="'+value+'">'+value+'</option>';
 		});
 		$( '#campo-departamento' ).html(ldepartamentos);
 
 		/* Carga lista de municipios */
-
 		$( '#campo-departamento' ).change( function(){
 			departamento = $( '#campo-departamento' ).val();
 			lmunicipios = '';
-			$.each( dp.departamentos[departamento].municipios, function( key, value ) {
+			$.each( pnn.departamento[departamento].municipios, function( key, value ) {
 				lmunicipios += '<option value="'+value+'">'+value+'</option>';
 			});
 			$( '#campo-municipio' ).html(lmunicipios);
 		} );
+
+		/* Envia formulario */
+		$( '#campo-departamento' ).click( function() {
+			datos = { 
+						fecha: $( '#campo-fecha' ).val(),
+						texto: $( '#campo-texto' ).val(),
+						departamento: $( '#campo-departamento' ).val(),
+						municipio: $( '#campo-municipio' ).val()
+					};		
+			pnn.enviarFormulario(datos);	
+		} );
 		
   	} );
-    /*
-    jQuery('#dashboardLink').addClass('active');
-    jQuery('#dataLink').removeClass('active');
-    */
          
 </script>
