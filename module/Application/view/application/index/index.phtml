@@ -60,7 +60,7 @@
 		/* Carga lista de departamentos */
 		ldepartamentos = '<option value=0>Seleccione...</option>';
 		$.each( dp.lista, function( key, value ) {
-			ldepartamentos .= '<option value="'.value.'">'.value.'</option>';
+			ldepartamentos += '<option value="'+value+'">'+value+'</option>';
 		});
 		$( '#campo-departamento' ).html(ldepartamentos);
 
@@ -70,7 +70,7 @@
 			departamento = $( '#campo-departamento' ).val();
 			lmunicipios = '';
 			$.each( dp.departamentos[departamento].municipios, function( key, value ) {
-				lmunicipios .= '<option value="'.value.'">'.value.'</option>';
+				lmunicipios += '<option value="'+value+'">'+value+'</option>';
 			});
 			$( '#campo-municipio' ).html(lmunicipios);
 		} );
