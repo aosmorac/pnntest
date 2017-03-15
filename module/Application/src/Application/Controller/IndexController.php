@@ -24,5 +24,6 @@ class IndexController extends AbstractActionController
     	$params = $this->params()->fromQuery();
     	$data = 'Fecha: '.$params['fecha'].' -- Texto: '.$params['texto'].' -- Departamento: '.$params['departamento'].' -- Municipio: '.$params['municipio'].'';
     	echo $data;
+    	return new ViewModel();
     }
 }
