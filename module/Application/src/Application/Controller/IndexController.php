@@ -20,8 +20,6 @@ class IndexController extends AbstractActionController
     
     public function updateAction()
     {
-    	$request = $this->getRequest();
-    	$data = 'Fecha: '.$request['fecha'].' -- Texto: '.$request['texto'].' -- Departamento: '.$request['departamento'].' -- Municipio: '.$request['municipio'].'';
-    	echo $data;
+    	
     }
 }
