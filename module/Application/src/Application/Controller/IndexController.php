@@ -20,6 +20,9 @@ class IndexController extends AbstractActionController
     
     public function updateAction()
     {
-    	
+    	header('Access-Control-Allow-Origin: *');
+    	$params = $this->params()->fromQuery();
+    	$data = 'Fecha: '.$params['fecha'].' -- Texto: '.$params['texto'].' -- Departamento: '.$params['departamento'].' -- Municipio: '.$params['municipio'].'';
+    	echo $data;
     }
 }
