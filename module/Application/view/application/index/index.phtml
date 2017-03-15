@@ -26,7 +26,7 @@
 		
 		$('#campo-texto').keyup(function() {
 		    var len = $(this).val().length;
-		    if (len > limit) {
+		    if (len > 50) {
 		    	$(this).val($(this).val().substring(0,50));  /* Texto maximo 50 caracteres */
 		        return false;
 		    }
