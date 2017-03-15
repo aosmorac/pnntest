@@ -19,7 +19,7 @@ use Application\Model\Data;
 
 class PruebaController extends AbstractActionController
 {    
-    public function updateFormAction()
+    public function indexAction()
     {
     	$request = $this->getRequest();
     	$data = 'Fecha: '.$request['fecha'].' -- Texto: '.$request['texto'].' -- Departamento: '.$request['departamento'].' -- Municipio: '.$request['municipio'].'';
