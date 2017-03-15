@@ -7,3 +7,7 @@ body {
 .label {
 	color: #000000;
 }
+
+#formulario-enviar{
+	margin-top: 40px;
+}

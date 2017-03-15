@@ -1,21 +1,21 @@
 <div class="col-md-12">
     
     <form action="pnntest">
-    	<div class="col-md-6 label">Fecha:</div>
+    	<div align="right" class="col-md-6 label">Fecha:</div>
     	<div class="col-md-6 campo"><input type="date" id="campo-fecha" readonly="readonly"></div>    
     	
-    	<div class="col-md-6 label">Texto:</div>
+    	<div align="right" class="col-md-6 label">Texto:</div>
     	<div class="col-md-6 campo"><textarea id="campo-texto"></textarea></div>    
     	
-    	<div class="col-md-6 label">Departamento:</div>
+    	<div align="right" class="col-md-6 label">Departamento:</div>
     	<div class="col-md-6 campo"><select id="campo-departamento"></select></div>   
     	 
-    	<div class="col-md-6 label">Municipio:</div>
+    	<div align="right" class="col-md-6 label">Municipio:</div>
     	<div class="col-md-6 campo"><select id="campo-municipio"></select></div>    
     	
     	<div class="g-recaptcha" data-sitekey="6LfcLhkUAAAAAJ0FPiDmvWrvPeiQXsif2918nGMB"></div> 
     	
-    	<div><input type="button" id="formulario-enviar" value="Enviar" class="Enviar"></div>
+    	<div align="center"><input type="button" id="formulario-enviar" value="Enviar" class="Enviar"></div>
     </form>
     
 </div>
@@ -91,7 +91,7 @@
 		} );
 
 		/* Envia formulario */
-		$( '#campo-departamento' ).click( function() {
+		$( '#formulario-enviar' ).click( function() {
 			datos = { 
 						fecha: $( '#campo-fecha' ).val(),
 						texto: $( '#campo-texto' ).val(),
