@@ -58,21 +58,21 @@
 		});
 
 		/* Carga lista de departamentos */
-		lista-departamentos = '';
+		ldepartamentos = '<option value=0>Seleccione...</option>';
 		$.each( dp.lista, function( key, value ) {
-			lista-departamentos .= '<option value="'.value.'">'.value.'</option>';
+			ldepartamentos .= '<option value="'.value.'">'.value.'</option>';
 		});
-		$( '#campo-departamento' ).html(lista-departamentos);
+		$( '#campo-departamento' ).html(ldepartamentos);
 
 		/* Carga lista de municipios */
 
 		$( '#campo-departamento' ).change( function(){
 			departamento = $( '#campo-departamento' ).val();
-			lista-municipios = '';
+			lmunicipios = '';
 			$.each( dp.departamentos[departamento].municipios, function( key, value ) {
-				lista-municipios .= '<option value="'.value.'">'.value.'</option>';
+				lmunicipios .= '<option value="'.value.'">'.value.'</option>';
 			});
-			$( '#campo-municipio' ).html(lista-municipios);
+			$( '#campo-municipio' ).html(lmunicipios);
 		} );
 		
   	} );
